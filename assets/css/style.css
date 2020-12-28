@@ -1,0 +1,127 @@
+/* header */
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+#input {
+    width: 70%;
+	color: #000;
+	font-size: 20px;
+	text-indent: 25px;
+	border-radius: 10px;
+}
+
+#add {
+    border: solid 2px #000;
+    border-radius: 50px;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+#add:hover {
+    color: #fff;
+    background-color: #000;
+}
+/* /header */
+
+/* main */
+/* span {
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 40px;
+}
+
+p {
+	display: flex;	
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	font-style: italic;
+	margin-bottom: 30px;
+} */
+
+/*  残っている仕事数 */
+#remind {
+	display: flex;	
+	justify-content: center;
+	align-items: center;
+	font-size: 36px;
+	margin: 30px;
+}
+
+
+/*  未完了のタスク */
+/*  完了済みのタスク */
+.title {
+	margin: 15px 0;
+	padding-left: 50px;
+	color: #000;
+	font-size: 30px;
+}
+
+
+/* 追加されるリストアイテムのCSS */
+.list li {
+	font-size: 18px;
+	font-weight: bold;
+	color: #000;
+    line-height: 20px;
+    border: solid 2px #000;
+	border-radius: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	padding: 10px 100px 10px 15px;
+    height: 50px;
+}
+
+.list li:last-child {
+	margin-bottom: 0;
+}
+
+.buttons {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttons button {
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+.buttons button:last-child {
+	margin-right: 0;
+}
+
+.done {
+    color: #00f;
+    background-color: #fff;
+    border: solid 2px #00f;
+    border-radius: 50px;
+}
+
+.done:hover {
+    color: #fff;
+    background-color:  #00f;
+}
+
+.remove {
+    color: #f00;
+    background-color: #fff;
+    border: solid 2px #f00;
+    border-radius: 50px;
+}
+
+.remove:hover {
+    color: #fff;
+    background-color: #f00;
+}
