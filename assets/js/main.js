@@ -1,6 +1,6 @@
 // チェックマークとゴミ箱のアイコン
-const doneIcon = '<i class="fas fa-check fa-2x"></i>';
-const removeIcon = '<i class="far fa-trash-alt fa-2x"></i>';
+let doneIcon = '<i class="fas fa-check fa-2x"></i>';
+let removeIcon = '<i class="far fa-trash-alt fa-2x"></i>';
 let data;
 
 // もしデータが保存されていれば
@@ -23,13 +23,17 @@ document.getElementById('add').addEventListener('click', function() {
     addTask(value);
 });
 
+// localStorage.clear();
+console.log(localStorage);
+console.log(data);
+
 
 
 // ーーーーーー　関数　ーーーーー
 function addTask(value) {
-    addTaskDOM(value);
+    addTaskToDOM(value);
     document.getElementById('input').value = '';
-    data.task.push('value');
+    data.task.push(value);
     dataObjectUpdated();
 }
 
@@ -45,7 +49,7 @@ function addTaskToDOM(text, isDone) {
     task.textContent = text;
 
     let buttons = document.createElement('div');
-    buttons.classList.add(buttons);
+    buttons.classList.add('buttons');
 
     // 完了ボタンの作成
     let done = document.createElement('button');
