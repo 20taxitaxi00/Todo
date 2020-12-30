@@ -27,7 +27,7 @@ header {
 /* /header */
 
 /* main */
-/* span {
+span {
 	margin-left: 20px;
 	margin-right: 20px;
 	font-size: 40px;
@@ -40,7 +40,7 @@ p {
 	font-weight: bold;
 	font-style: italic;
 	margin-bottom: 30px;
-} */
+}
 
 /*  残っている仕事数 */
 #remind {
@@ -51,14 +51,33 @@ p {
 	margin: 30px;
 }
 
-
-/*  未完了のタスク */
-/*  完了済みのタスク */
+/* タスク */
 .title {
 	margin: 15px 0;
 	padding-left: 50px;
 	color: #000;
 	font-size: 30px;
+}
+
+#not-yet:empty::after{
+	content: "You have nothing to-do!";
+}
+
+#done:empty::after {
+	content: "You have yet to complete any tasks.";
+}
+
+#not-yet::after,
+#done::after {
+	display: block;
+    text-align: center;
+    font-size: 14px;
+	color: #aaa;
+	margin: 15px 0;
+}
+
+#done .buttons .done {
+	display: none;
 }
 
 
@@ -124,4 +143,48 @@ p {
 .remove:hover {
     color: #fff;
     background-color: #f00;
+}
+
+hr {
+	width: 70%;
+	margin: 10px auto;
+}
+
+
+
+@media screen and (max-width: 767px) {
+	#input {
+		font-size: 12px;
+		height: 35px;
+	}
+
+	#add {
+		font-size: 1.5em;
+		padding: 6px 8px;
+	}
+
+	#remind {
+		font-size: 20px;
+	}	
+
+	span {
+		font-size: 24px;
+	}
+
+	.title {
+		font-size: 20px;
+	}
+
+	.list li {
+		padding: 10px 15px 10px 15px;
+		height: 30px;
+	}
+
+	.buttons button {
+		margin-right: 0;
+	}
+
+	.done i, .remove i {
+		font-size: 1.5em;
+	}
 }

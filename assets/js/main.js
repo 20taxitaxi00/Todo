@@ -21,11 +21,32 @@ document.getElementById('add').addEventListener('click', function() {
     let value = document.getElementById('input').value;
 
     addTask(value);
+
+    countTask();
 });
 
-// localStorage.clear();
-console.log(localStorage);
-console.log(data);
+// 未完了タスクカウント
+let span = document.querySelector('span');
+span.textContent = data.task.length;
+
+
+
+
+// 更新で名言
+var word = [
+    "めちゃめちゃ怯えろ、そしてそれをやれ。",
+    "勇気とは、プレッシャーに負けない品格のことである。",
+    "方法は見つける。なければ作る。",
+    "自分に打ち勝つことこそ最も偉大な勝利である。",
+    "今の時代を作れるのは、今を生きている人間だけだ。",
+    "考えても答えは出ない。答えはいつも「行動」が教えてくれる。",
+    "いつの時代も、強いものではなく、環境に適応したものが生き残る。",
+    "主体的とは、人間として自分の人生に対する責任を取ること。",
+    "決断すべきことは我々に与えられた時間の中で何をするかである。",
+    "やるか、やらないか。やってみるなんて言葉は存在しない。"
+];
+var random = Math.floor(Math.random() * word.length);
+document.getElementById("word").textContent = word[random];
 
 
 
@@ -92,6 +113,9 @@ function doneTask() {
     data.task.splice(data.task.indexOf(value), 1);
     data.done.push(value);
     dataObjectUpdated();
+
+    // 未完了タスクをカウント
+    countTask();
 }
 
 // 削除ボタン関数
@@ -107,9 +131,12 @@ function removeTask() {
     if(id === 'not-yet') {
         data.task.splice(data.task.indexOf(value), 1);
     } else {
-        data.task.splice(data.done.indexOf(value), 1);
+        data.done.splice(data.done.indexOf(value), 1);
     }
     dataObjectUpdated();
+
+     // 未完了タスクをカウント
+     countTask();
 }
 
 function dataObjectUpdated() {
@@ -125,4 +152,10 @@ function renderTodoList() {
     for (let value of data.done) {
         addTaskToDOM(value, true);
     }
+}
+
+// 未完了タスク数をカウント
+function countTask() {
+    let span = document.querySelector('span');
+    span.textContent = data.task.length;
 }
